@@ -81,11 +81,42 @@ v <- c('3701','3702','3703','3704','3705','3706','3707','3708','3709','3710',
        '4101','4102','4103','4104','4105','4106','4107','4108','4109','4110',
        '4111','4112','4113','4114')
 pumsNYC<-subset(pums, (PUMA %in% v)==TRUE)
+colnames(pums)
+
+# create Y-axis column for internet yes/no
+pums$Y <- 0
+
+test <-pums[,c("Y")]
+
+### there is certain thing as internet allocation flag/ mobile broadband allocation flag.
+### what's this?
+if((pums$ACCESS==1) || (pums$ACCESS==2) || (pums$BROADBND==1) || (pums$DSL==1) ||
+   (pums$FIBEROP==1) || (pums$MODEM==1) || (pums$OTHSVCEX==1) || (pums$SATELLITE==1) ){
+  pums$Y=1
+} else{
+  pums$Y=0
+}
+
+
+# select useful columns, NOT FINISHED
+pums_filter <- pums[,c("PUMA","ACCESS","BROADBND","DIALUP","DSL","FIBEROP","MODEM",
+                "COMPOTHX","HANDHELD","HFL","INSP","LAPTOP","BDSP","BLD",
+                "CONP","MHP","ELEP","FS","FULP","GASP","HANDHELD","HFL",
+                "INSP","LAPTOP","MHP","MRGI","MRGP","MRGT","MRGX","REFR","RMSP",
+                "RNTM","RNTP","RWAT","RWATPR","SMP","TEL","TEN","VALP","VEH","WATP",
+                "YBL","FES","FINCP","FPARC","GRNTP","GRPIP","HHL","HHT","HINCP",
+                "HOTWAT","HUGCL","HUPAC","HUPARC","KIT","LNGI","MULTG","MV",
+                "OCPIP","SMOCP","SRNT","TAXP","WIF","WKEXREL","WORKSTAT","FACCESSP","Y")]
+
 # to csv file for nyc_pums
-write.csv(pumsNYC, file = "pumsNYC.csv")
+write.csv(pums_filter, file = "pumsNYC_filter.csv")
 
 
 
+
+
+1<-read.csv("map/DC10CT_C36005_CT2MS.txt",header=TRUE, sep=';')
+2<-read.csv("map/DC10CT_C36005_CT2MS.txt",header=TRUE, sep=';')
 
 
 
