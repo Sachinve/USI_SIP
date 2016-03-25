@@ -310,4 +310,4 @@ For the cartographic boundary files, the Point and Vector Object Count for the G
 		<metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
 		<metstdv>FGDC-STD-001-1998</metstdv>
 	</metainfo>
-	<Esri><CreaDate>20160304</CreaDate><CreaTime>16194400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri></metadata>
+	<Esri><CreaDate>20160304</CreaDate><CreaTime>16194400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.3\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20160325" Time="111038">CalculateField PUMA_NYC PUMA [PUMACE10] VB #</Process></lineage></DataProperties></Esri></metadata>
